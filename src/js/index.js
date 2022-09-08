@@ -35,6 +35,12 @@ btnSearch.addEventListener('click', e => {
   }
 });
 
+function cleanGallery() {
+  gallery.innerHTML = '';
+  pageNumber = 1;
+  btnLoadMore.style.display = 'none';
+}
+
 btnLoadMore.addEventListener('click', () => {
   pageNumber++;
   const trimmedValue = input.value.trim();
@@ -82,10 +88,4 @@ function renderImageList(images) {
     })
     .join('');
   gallery.innerHTML += markup;
-}
-
-function cleanGallery() {
-  gallery.innerHTML = '';
-  pageNumber = 1;
-  btnLoadMore.style.display = 'none';
 }
